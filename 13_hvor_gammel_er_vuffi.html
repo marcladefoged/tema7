@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<input type="int" id="hundAlder">
+<button id="gammelMetode">GAMMEL METODE</button>
+<button id="nyeMetode">NYE METODE</button>
+
+<body>
+    <script>
+        document.querySelector("#gammelMetode").addEventListener("click", gamMet);
+        document.querySelector("#nyeMetode").addEventListener("click", nyMet);
+
+
+
+        function gamMet() {
+            let hundAlder = document.querySelector("#hundAlder").value;
+            let hundTilMen = hundAlder * 7;
+            console.log("Gamle metode: Din hund er " + hundTilMen + " i menneskeår");
+        }
+
+        function nyMet() {
+            let hundAlder = document.querySelector("#hundAlder").value;
+            let hundTilmen = 16 * Math.log(hundAlder) + 31;
+            console.log("Nye metode: Din hund er " + hundTilmen + " i menneskeår");
+        }
+    </script>
+</body></html>
