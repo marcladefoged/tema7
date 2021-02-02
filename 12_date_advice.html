@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<p>DIN ALDER</p>
+<input type="int" id="minAlder">
+<p>DATES ALDER</p>
+<input type="int" id="dateAlder">
+<button>UDREGN</button>
+
+<body>
+    <script>
+        document.querySelector("button").addEventListener("click", udRegnAlder);
+
+        function udRegnAlder() {
+
+            let minAlder = document.querySelector("#minAlder").value;
+
+            let dateAlder = document.querySelector("#dateAlder").value;
+
+            let maxAlder = minAlder / 2 + 7;
+            let maxDateAlder = dateAlder / 2 + 7;
+
+
+            if (dateAlder == maxAlder) {
+                console.log("Hendes alder er din alder diviederet med 2 + 7");
+            } else if (minAlder == maxDateAlder) {
+                console.log("Din alder er hendes alder divideret med 2 + 7");
+            } else if (minAlder < 15 || dateAlder < 15) {
+                console.log("du eller din date er under 15");
+            } else {
+                console.log("din date er enten for ung eller for gammel");
+            }
+        }
+
+    </script>
+</body>
+
+</html>
