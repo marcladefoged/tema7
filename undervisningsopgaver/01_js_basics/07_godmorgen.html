@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <button>TID</button>
+    <script>
+        document.querySelector("button").addEventListener("click", clickTid);
+
+        function clickTid() {
+            const time = new Date().getHours();
+            console.log("time", time);
+
+            if (time < 5) {
+                console.log("Godnat");
+            } else if (time < 10) {
+                console.log("Godmorgen");
+
+            } else if (time < 18) {
+                console.log("Goddag");
+
+            } else {
+                console.log("Godaften");
+            }
+        }
+
+
+        /*
+                    if (time > 5 && tid < 10) {
+                        console.log("Godmorgen klokken er " + tid);
+                    } else if (time > 10 && tid < 18) {
+                        console.log("Goddag klokken er " + tid);
+                    } else if (tid > 18 && tid < 24) {
+                        console.log("Godaften klokken er " + tid);
+                    } else if (time < 5) {
+                        console.log("Godnat klokken er " + tid);
+                    }
+        */
+    </script>
+</body></html>
