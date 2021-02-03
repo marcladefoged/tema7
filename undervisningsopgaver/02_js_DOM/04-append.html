@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="html-struktur.css">
+</head>
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article>
+                <img src="http://placeimg.com/640/480/arch" alt="">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, est temporibus ea placeat voluptas ullam impedit eaque sequi, repellendus reiciendis, eum voluptatum error non. Sit ad explicabo voluptatibus! Soluta nobis at perspiciatis aliquam fugiat dolores incidunt voluptatibus, atque quam. Rerum id nemo sed deleniti unde ullam error, eligendi exercitationem soluta.</p>
+            </article>
+            <article>
+                <img src="http://placeimg.com/640/480/arch" alt="">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, est temporibus ea placeat voluptas ullam impedit eaque sequi, repellendus reiciendis, eum voluptatum error non. Sit ad explicabo voluptatibus! Soluta nobis at perspiciatis aliquam fugiat dolores incidunt voluptatibus, atque quam. Rerum id nemo sed deleniti unde ullam error, eligendi exercitationem soluta.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+
+    <script>
+        const overskrift = document.querySelector("h1");
+        console.log("overskrift");
+
+        const undertitel = document.querySelector("h2");
+        console.log("undertitel");
+
+        const articleoverskrift = document.querySelector("h3");
+        console.log("articleoverskrift");
+
+        const artikeloverskrift1 = document.querySelector("article:nth-child(1) h3");
+        const artikeloverskrift2 = document.querySelector("article:nth-child(2) h3");
+
+        const artikeltext1 = document.querySelector("article:nth-child(1) p");
+        const artikeltext2 = document.querySelector("article:nth-child(2) p");
+
+        const billede1 = document.querySelector("img");
+        console.log("billede1");
+
+        const billede2 = document.querySelector("img");
+        console.log("billede2");
+
+        const tekst = document.querySelector("p");
+        console.log("tekst");
+
+        const footer = document.querySelector("footer");
+        console.log("footer");
+
+
+        overskrift.textContent = "Ny overskrift lavet i javascript";
+
+        undertitel.textContent = "Denne undertitel er også ny";
+
+        artikeloverskrift1.textContent = "Nye artikeloverskrifter";
+
+        artikeltext1.textContent = "Den her tekst er også ny og er lavet i javascript";
+
+        artikeloverskrift2.innerHTML = "<h4>Her er endnu en ny artikeloverskrift</h4>";
+
+        artikeltext2.innerHTML = "<b>Her er endnu en brødtekst under et billede af en by</b>";
+
+
+        const pic1 = document.querySelector("article:nth-child(1) img")
+        console.log(pic1);
+
+        const pic2 = document.querySelector("article:nth-child(2) img")
+        console.log(pic2);
+
+        pic1.src = "http://placeimg.com/640/480/nature";
+        pic2.src = "http://placeimg.com/640/480/nature";
+
+        pic1.alt = "Bybilledet er erstatet af et naturbillede";
+        pic2.alt = "Dette billede er også erstatet af et naturbillede";
+
+        let mainSection = document.querySelector("section");
+        //nyt article element
+        let newArticle = document.createElement("article");
+        //nyt H# element
+        let overskriften = document.createElement("h3");
+        //tekst til overskriften
+        let overskriftText = document.createTextNode("Article 3");
+        //indsæt tekst i overskrift
+        overskriften.appendChild(overskriftText);
+        //tilføj overskrift til article
+        newArticle.appendChild(overskriften);
+        //tilføj article til section
+        mainSection.appendChild(newArticle);
+    </script>
+
+
+</body></html>
