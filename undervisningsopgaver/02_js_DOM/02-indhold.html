@@ -16,12 +16,12 @@
     <main>
         <h2>Undertitel</h2>
         <section>
-            <article id="first_article">
+            <article>
                 <img src="http://placeimg.com/640/480/arch" alt="">
                 <h3>Article 1</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, est temporibus ea placeat voluptas ullam impedit eaque sequi, repellendus reiciendis, eum voluptatum error non. Sit ad explicabo voluptatibus! Soluta nobis at perspiciatis aliquam fugiat dolores incidunt voluptatibus, atque quam. Rerum id nemo sed deleniti unde ullam error, eligendi exercitationem soluta.</p>
             </article>
-            <article id="second_article">
+            <article>
                 <img src="http://placeimg.com/640/480/arch" alt="">
                 <h3>Article 2</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, est temporibus ea placeat voluptas ullam impedit eaque sequi, repellendus reiciendis, eum voluptatum error non. Sit ad explicabo voluptatibus! Soluta nobis at perspiciatis aliquam fugiat dolores incidunt voluptatibus, atque quam. Rerum id nemo sed deleniti unde ullam error, eligendi exercitationem soluta.</p>
@@ -34,31 +34,31 @@
     </footer>
 
     <script>
-        let overskrift = document.querySelector("h1");
+        const overskrift = document.querySelector("h1");
         console.log("overskrift");
 
-        let undertitel = document.querySelector("h2");
+        const undertitel = document.querySelector("h2");
         console.log("undertitel");
 
-        let articleoverskrift = document.querySelector("h3");
+        const articleoverskrift = document.querySelector("h3");
         console.log("articleoverskrift");
 
-        const first_article = document.querySelector("#first_article");
-        console.log("first_article");
+        const artikeloverskrift1 = document.querySelector("article:nth-child(1) h3");
+        const artikeloverskrift2 = document.querySelector("article:nth-child(2) h3");
 
-        const second_article = document.querySelector("#second_article");
-        console.log("second_article");
+        const artikeltext1 = document.querySelector("article:nth-child(1) p");
+        const artikeltext2 = document.querySelector("article:nth-child(2) p");
 
-        let billede1 = document.querySelector("img");
+        const billede1 = document.querySelector("img");
         console.log("billede1");
 
-        let billede2 = document.querySelector("img");
+        const billede2 = document.querySelector("img");
         console.log("billede2");
 
-        let tekst = document.querySelector("p");
+        const tekst = document.querySelector("p");
         console.log("tekst");
 
-        let footer = document.querySelector("footer");
+        const footer = document.querySelector("footer");
         console.log("footer");
 
 
@@ -66,9 +66,13 @@
 
         undertitel.textContent = "Denne undertitel er også ny";
 
-        articleoverskrift.textContent = "Nye artikeloverskrifter";
+        artikeloverskrift1.textContent = "Nye artikeloverskrifter";
 
-        tekst.textContent = "Den her tekst er også ny og er lavet i javascript";
+        artikeltext1.textContent = "Den her tekst er også ny og er lavet i javascript";
+
+        artikeloverskrift2.innerHTML = "<h4>Her er endnu en ny artikeloverskrift</h4>";
+
+        artikeltext2.innerHTML = "<b>Her er endnu en brødtekst under et billede af en by</b>";
     </script>
 
 
