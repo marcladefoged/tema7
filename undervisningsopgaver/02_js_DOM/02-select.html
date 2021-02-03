@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="html-struktur.css">
+</head>
+
+<body>
+    <header>
+        <h1>Titel</h1>
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article id="first_article">
+                <img src="http://placeimg.com/640/480/arch" alt="">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, est temporibus ea placeat voluptas ullam impedit eaque sequi, repellendus reiciendis, eum voluptatum error non. Sit ad explicabo voluptatibus! Soluta nobis at perspiciatis aliquam fugiat dolores incidunt voluptatibus, atque quam. Rerum id nemo sed deleniti unde ullam error, eligendi exercitationem soluta.</p>
+            </article>
+            <article id="second_article">
+                <img src="http://placeimg.com/640/480/arch" alt="">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, est temporibus ea placeat voluptas ullam impedit eaque sequi, repellendus reiciendis, eum voluptatum error non. Sit ad explicabo voluptatibus! Soluta nobis at perspiciatis aliquam fugiat dolores incidunt voluptatibus, atque quam. Rerum id nemo sed deleniti unde ullam error, eligendi exercitationem soluta.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>This is the footer</p>
+    </footer>
+
+    <script>
+        let overskrift = document.querySelector("h1");
+        console.log("overskrift");
+
+        let undertitel = document.querySelector("h2");
+        console.log("undertitel");
+
+        let articleoverskrift = document.querySelector("h3");
+        console.log("articleoverskrift");
+
+        const first_article = document.querySelector("#first_article");
+        console.log("first_article");
+
+        const second_article = document.querySelector("#second_article");
+        console.log("second_article");
+
+        let billede1 = document.querySelector("img");
+        console.log("billede1");
+
+        let billede2 = document.querySelector("img");
+        console.log("billede2");
+
+        let tekst = document.querySelector("p");
+        console.log("tekst");
+
+        let footer = document.querySelector("footer");
+        console.log("footer");
+    </script>
+
+
+</body></html>
