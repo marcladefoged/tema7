@@ -10,41 +10,46 @@
 
 <body>
 
-    <article id="dyr"></article>
+    <section id="liste"></section>
 
     <script>
+        document.addEventListener("DOMContentLoaded", visDyr);
+
         let dyr = [{
                 "navn": "Frø",
-                "type": "Amfible",
-                "levested": "Sumpen",
+                "type": "amfibie",
+                "levested": "sumpen",
                 "billede": "http://mabe-kea.dk/E19/pics/frog.png",
             },
             {
                 "navn": "Gris",
-                "type": "Pattedyr",
-                "levested": "Svinefarm",
+                "type": "pattedyr",
+                "levested": "svinefarm",
                 "billede": "http://mabe-kea.dk/E19/pics/pig.png",
             },
             {
                 "navn": "Ræv",
-                "type": "Pattedyr",
+                "type": "pattedyr",
                 "levested": "skov",
                 "billede": "http://mabe-kea.dk/E19/pics/fox.png",
             },
             {
                 "navn": "Sild",
-                "type": "Fisk",
-                "levested": "Havet",
+                "type": "fisk",
+                "levested": "havet",
                 "billede": "http://mabe-kea.dk/E19/pics/sild.png",
             },
             {
                 "navn": "Krokodille",
-                "type": "Krybdyr",
-                "levested": "Sumpen",
+                "type": "krybdyr",
+                "levested": "sumpen",
                 "billede": "http://mabe-kea.dk/E19/pics/kroko.png",
             },
         ]
-        console.log(dyr);
+
+        function visDyr() {
+            console.log(dyr);
+        }
 
     </script>
 </body>
