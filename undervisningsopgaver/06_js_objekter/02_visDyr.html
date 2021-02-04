@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objekter</title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <article id="dyr"></article>
+
+    <script>
+        const dyr = {
+            "navn": "gris",
+            "type": "pattedyr",
+            "billede": "https//mabe-kea.dk/E19/pics/pig.png",
+            "levested": "svinefarme"
+        };
+
+        console.log(dyr);
+
+        console.log(`navn: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`)
+
+
+
+        document.addEventListener("DOMContentLoaded", sidenErLoaded);
+
+        const destination = document.querySelector("#dyr");
+        const grisen = `navn: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
+
+
+        let billedeGris = document.createElement("img");
+
+        function sidenErLoaded() {
+            console.log("siden er loaded");
+        }
+
+        destination.innerHTML = "Dyr: gris, type: pattedyr, levested: svinefarme";
+
+
+        billedeGris.src = "http://mabe-kea.dk/E19/pics/pig.png";
+        destination.appendChild(billedeGris);
+
+    </script>
+</body>
+
+</html>
