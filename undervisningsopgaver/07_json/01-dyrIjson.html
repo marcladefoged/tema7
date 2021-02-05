@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+    <style>
+        article {
+            border: 1px solid #333;
+            padding: 10px;
+            margin: 1em;
+        }
+
+        img {
+            max-width: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section>
+
+    </section>
+
+    <template>
+        <article>
+            <h2></h2>
+            <img src="" alt="">
+            <p class="art"></p>
+            <p class="sted"></p>
+        </article>
+    </template>
+    <script>
+        let container = document.querySelector("section");
+        let temp = document.querySelector("template");
+
+        const fil = "alleDyr.json";
+
+        async function hentdata() {
+            const respons = await fetch(fil);
+            const json = await respons.json();
+            vis(json);
+        }
+
+        function vis(dyr) {
+            //løb igennem array "dyr"
+            dyr.forEach(etDyr => {
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector("h2").textContent = etDyr.navn;
+                klon.querySelector(".art").textContent = "Type: " + etDyr.type;
+                klon.querySelector(".sted").textContent = "Levested: " + etDyr.levested;
+                klon.querySelector("img").src = etDyr.billede;
+                container.appendChild(klon);
+            })
+        }
+
+        hentdata();
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objekter</title>
+    <style>
+        article {
+
+            border: 1px solid #000;
+            padding: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section class="data-container"></section>
+    <template>
+        <article class="dyr">
+            <h3></h3>
+            <img src="" alt="">
+            <p class="type"></p>
+            <p class="levested"></p>
+        </article>
+    </template>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", visDyr);
+
+        const container = document.querySelector(".data-container");
+        const artikelTemplate = document.querySelector("template");
+
+        const fil = "alleDyr.json";
+
+        async function hentdata(fil) {
+            const result = await fetch(fil);
+            const json = await result.json();
+            vis(json);
+        }
+
+
+        function visDyr() {
+
+
+            dyr.forEach(enkeltdyr => {
+
+                let klon = artikelTemplate.cloneNode(true).content;
+                klon.querySelector("h3").textContent = enkeltdyr.navn;
+                klon.querySelector("img").src = enkeltdyr.billede;
+                klon.querySelector("img").alt = enkeltdyr.navn;
+                klon.querySelector(".type").textContent = enkeltdyr.type;
+                klon.querySelector(".levested").textContent = enkeltdyr.levested;
+                container.appendChild(klon);
+
+
+            })
+        }
+
+        hentdata(fil);
+
+    </script>
+</body>
+
+</html>
+-->
