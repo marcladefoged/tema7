@@ -41,7 +41,6 @@
         .valgt {
             background-color: green;
         }
-
     </style>
 
 </head>
@@ -81,14 +80,19 @@
 
         // første funktion der kaldes efter DOM er loaded
         function start() {
-            const filterknapper = document.querySelectorAll("nav button");
-            filterknapper.forEach(knap => knap.addEventListener("click", filtrerPersoner));
+            const filterKnapper = document.querySelectorAll("nav button");
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerPersoner));
             loadJSON();
         }
 
         function filtrerPersoner() {
             filter = this.dataset.troende;
+
+            visPersoner();
+
         }
+
+        visPersoner();
 
         async function loadJSON() {
             const JSONData = await fetch("https://persongalleri-5d3e.restdb.io/rest/persongalleri", {
@@ -104,11 +108,11 @@
 
             const dest = document.querySelector("#liste"); // container til articles med en person
             const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
-
+            dest.textContent = "";
             personer.forEach(person => {
-
+                console.log("Troende", person.troende);
                 // loop igennem json (personer)
-                if (filter == person.troende) {
+                if (filter == person.troende || filter == "alle") {
                     const klon = skabelon.cloneNode(true);
                     klon.querySelector(".navn").textContent = person.fornavn + " " + person.efternavn;
                     klon.querySelector(".profil-billede").src = medieurl + person.billede;
@@ -116,8 +120,5 @@
                 }
             })
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
