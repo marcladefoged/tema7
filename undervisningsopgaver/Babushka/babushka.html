@@ -8,10 +8,36 @@
     <style>
         body {
             font-family: sans-serif;
+            background-color: #8baecc;
         }
 
         img {
             width: 100%;
+        }
+
+        header img {
+            height: 500px;
+
+        }
+
+        h1 {
+            position: absolute;
+            z-index: 1;
+            margin: 0 0 100 0;
+            color: white;
+            font-size: 2rem;
+            margin: 200px 0 0 200px;
+
+        }
+
+        header h2 {
+            position: absolute;
+            z-index: 1;
+            margin: 100px 0 100 0;
+            color: white;
+            font-size: 4rem;
+            margin: 100px 0 0 200px;
+
         }
 
         #liste {
@@ -47,13 +73,15 @@
 
 <body>
     <header>
-        <h1>Alle</h1>
+        <h2>Bistro Babushka</h2>
+        <h1>Alle retter</h1>
+        <img src="media/russia2.jpg" alt="Russia">
         <nav>
-            <button data-troende="alle" class="valgt">Alle</button>
-            <button data-troende="forretter">Forretter</button>
-            <button data-troende="hovedretter">Hovedretter</button>
-            <button data-troende="desserter">Desserter</button>
-            <button data-troende="drikkevarer">Drikkevarer</button>
+            <button data-kategori="alle" class="valgt">Alle retter</button>
+            <button data-kategori="forretter">Forretter</button>
+            <button data-kategori="hovedretter">Hovedretter</button>
+            <button data-kategori="desserter">Desserter</button>
+            <button data-kategori="drikkevarer">Drikkevarer</button>
         </nav>
     </header>
 
@@ -90,7 +118,7 @@
         }
 
         function filtrerRetter() {
-            filter = this.dataset.troende;
+            filter = this.dataset.kategori;
             document.querySelector(".valgt").classList.remove("valgt");
             this.classList.add("valgt");
             visRetter();
@@ -116,12 +144,13 @@
             const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
             dest.textContent = "";
             retter.forEach(menukort => {
-                console.log("Troende", menukort.troende);
+                console.log("Kategori", menukort.kategori);
                 // loop igennem json (retter)
-                if (filter == menukort.troende || filter == "alle") {
+                if (filter == menukort.kategori || filter == "alle") {
                     const klon = skabelon.cloneNode(true);
                     klon.querySelector(".navn").textContent = menukort.navn;
                     klon.querySelector(".profil-billede").src = medieurl + menukort.billede;
+                    klon.querySelector(".kortbeskrivelse").textContent = menukort.kortbeskrivelse;
                     dest.appendChild(klon);
                 }
             })
