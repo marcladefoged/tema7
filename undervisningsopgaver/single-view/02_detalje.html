@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <header>
+        <h1></h1>
+    </header>
+    <main>
+        <div class="billede">
+            <article>
+                <h2></h2>
+                <img src="" alt="">
+                <p>TITEL: </p>
+                <p>HOBBY: </p>
+            </article>
+        </div>
+        <button>TILBAGE</button>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => //tjekker inden om DOM er loaded
+            {
+
+                const imgUrl = "https://persongalleri-5d3e.restdb.io/media/";
+                const url = "https://persongalleri-5d3e.restdb.io/rest/persongalleri/";
+                const options = {
+                    headers: {
+                        'x-apikey': "600fe9211346a1524ff12e31"
+                    }
+                };
+
+                const urlPara = new URLSearchParams(window.location.search);
+                const id = urlPara.get("id");
+
+                async function hentData() {
+                    const respons = await fetch(url + `${id}`, options);
+                    const json = await respons.json();
+                    vis(json);
+                }
+                hentData();
+
+                function vis(person) {
+                    console.log("personer = " + person);
+                    document.querySelector("h1").textContent = person.fornavn + " " + person.efternavn;
+
+                    document.querySelector("img").src = imgUrl + person.billede[0];
+
+                    document.querySelector("p").textContent += person.titel;
+
+                    document.querySelector("p+p").textContent += person.hobby;
+                }
+
+                document.querySelector("button").addEventListener("click", () => {
+                    window.location.href = "01_kald.html";
+                })
+            })
+    </script>
+</body></html>
